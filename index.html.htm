@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompts - Regenerative Urban Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .prompt-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .prompt-card:hover {
+            transform: translateY(-4px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FDFDFD] text-zinc-900 selection:bg-zinc-900 selection:text-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-zinc-900 rounded-xl flex items-center justify-center text-white">
+                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tighter">Prompts</h1>
+                    <p class="text-xs text-zinc-500 font-medium uppercase tracking-widest">Regenerative Urban Design</p>
+                </div>
+            </div>
+            <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-zinc-500">
+                <a href="#" class="hover:text-zinc-900 transition-colors">Workshop</a>
+                <a href="#" class="hover:text-zinc-900 transition-colors">Resources</a>
+                <div class="h-4 w-px bg-zinc-200"></div>
+                <span class="text-zinc-400">v1.0.0</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <div class="mb-16 animate-fade-in">
+            <span class="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider mb-4">
+                Project Toolkit
+            </span>
+            <h2 class="text-5xl font-bold tracking-tight mb-4 max-w-2xl leading-[1.1]">
+                Architectural Prompts for Urban Regeneration.
+            </h2>
+            <p class="text-lg text-zinc-500 max-w-xl leading-relaxed">
+                A curated repository of prompts designed to facilitate the regenerative urban design workshop.
+                Copy and paste these into your AI assistant to generate frameworks, strategies, and master plans.
+            </p>
+        </div>
+
+        <!-- Prompts Grid -->
+        <div id="prompts-grid" class="grid grid-cols-1 gap-8">
+            <!-- Prompts will be injected here -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-24 pt-12 border-t border-zinc-100 pb-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <div class="space-y-2">
+                    <p class="text-sm font-semibold">Regenerative Urban Design Workshop</p>
+                    <p class="text-xs text-zinc-400">© 2026 • Crafted for architectural excellence.</p>
+                </div>
+                <div class="flex gap-8">
+                    <div class="space-y-1">
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Theme</p>
+                        <p class="text-sm font-medium">Urban Ecology</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Status</p>
+                        <p class="text-sm font-medium">Active Development</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const PROMPTS = [{
+                id: 'problematic',
+                title: 'Problematic',
+                icon: 'terminal',
+                content: `goodmorning... you know my workshop project, right? the theme is "regeneratif urban design"
+in this document there is a "problematique" i want you to create me another one, surprise me, (do not get far from the theme and thanks) :)`
+            },
+            {
+                id: 'challenges',
+                title: 'Challenges, Goals and strategies',
+                icon: 'target',
+                content: `according to this "problematique" (the problematic that he allready generated) and The swot (from the document) can you make me new "enjeux" and "objectifs" than make me an urban devolopement strategie.`
+            },
+            {
+                id: 'masterplan',
+                title: 'Master plan',
+                icon: 'layout',
+                content: `Generate a realistic-style master plan for the urban regeneration project.
+
+Context:
+- Theme: Regenerative Urban Design
+- Zone: Use the area outlined in the red line (from the plan I will provide).
+- The zone is far from the sea, so no coastal or waterfront elements.
+- Existing buildings must be recycled and reused (adaptive reuse), not demolished.
+
+Strategic framework to integrate:
+1. Couture urbaine: connect friches to active neighborhoods with green corridors and soft mobility (pedestrian, cycling).
+2. Écologie intégrée: introduce ecological infrastructures (green roofs, filtering gardens, ecological corridors).
+3. Activation sociale: create hybrid spaces (workshops, markets, cultural venues, co-working).
+4. Reconnexion littorale (conceptual/symbolic): thematic promenades, climate-adaptive public spaces, resilience infrastructure.
+5. Mémoire & innovation: heritage preservation combined with smart city technologies (sensors, data-driven identity).
+
+Urban actions to represent:
+- Pedestrian & cycling boulevards
+- Redesigned intersections prioritizing soft mobility
+- Green connectors and ecological corridors
+- Green roofs and filtering gardens
+- Hybrid spaces in recycled buildings
+- Community markets and inclusive plazas
+- Climate-adaptive parks and resilience infrastructure
+- Heritage façades preserved with adaptive reuse
+- Smart city sensors and digital heritage trails
+
+Diagram requirements:
+- Show zoning and land-use organization: recycled buildings, ecological hubs, public squares, cultural spaces, mobility corridors.
+- Represent building heights realistically (low-rise, mid-rise, high-rise) with volumetric blocks and shading.
+- Use realistic textures and colors (vegetation, pavement, building materials).
+- Include arrows/lines to represent flows: mobility, ecological continuity, social activation.
+- Style: realistic architectural rendering, professional, suitable for workshop presentation.
+- Output: a master plan that visually organizes the zone according to the strategies and actions above, rendered in a realistic style.`
+            }
+        ];
+
+        function createPromptCard(prompt) {
+            const card = document.createElement('div');
+            card.className = 'prompt-card group relative bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-zinc-400 shadow-sm hover:shadow-md animate-fade-in';
+            card.innerHTML = `
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-zinc-50 rounded-lg text-zinc-600 group-hover:bg-zinc-900 group-hover:text-white transition-colors duration-300">
+                  <i data-lucide="${prompt.icon}" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-semibold text-zinc-900 tracking-tight">${prompt.title}</h3>
+              </div>
+              <button
+                onclick="handleCopy(this, \`${prompt.id}\`)"
+                class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-200 active:scale-95"
+              >
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>Copy Prompt</span>
+              </button>
+            </div>
+            
+            <div class="relative">
+              <pre class="p-4 bg-zinc-50 rounded-xl text-sm text-zinc-600 font-mono leading-relaxed whitespace-pre-wrap max-h-[400px] overflow-y-auto scrollbar-hide">
+                ${prompt.content}
+              </pre>
+              <div class="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-zinc-50 to-transparent pointer-events-none opacity-50"></div>
+            </div>
+          </div>
+        `;
+            return card;
+        }
+
+        async function handleCopy(button, promptId) {
+            const prompt = PROMPTS.find(p => p.id === promptId);
+            if (!prompt) return;
+
+            try {
+                await navigator.clipboard.writeText(prompt.content);
+                const span = button.querySelector('span');
+                const icon = button.querySelector('i');
+                const originalText = span.innerText;
+                const originalIcon = icon.getAttribute('data-lucide');
+
+                span.innerText = 'Copied';
+                icon.setAttribute('data-lucide', 'check');
+                button.classList.add('bg-zinc-900', 'text-white');
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    span.innerText = originalText;
+                    icon.setAttribute('data-lucide', originalIcon);
+                    button.classList.remove('bg-zinc-900', 'text-white');
+                    lucide.createIcons();
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+
+        // Initialize Grid
+        const grid = document.getElementById('prompts-grid');
+        PROMPTS.forEach(prompt => {
+            grid.appendChild(createPromptCard(prompt));
+        });
+
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
